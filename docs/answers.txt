@@ -1,0 +1,138 @@
+PASTE THE CONSOLE OUTPUT YOU SAVED AT THE END OF STEP 3.C
+
+adamcrump@Mac assignment2 % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+adamcrump@Mac assignment2 % mkdir docs
+adamcrump@Mac assignment2 % cd docs
+adamcrump@Mac docs % echo "paste your output here" > status.txt
+adamcrump@Mac docs % cd ..
+adamcrump@Mac assignment2 % git add docs/status.txt
+adamcrump@Mac assignment2 % git commit -m "add git status output to docs/status.txt"
+[master de7adfb] add git status output to docs/status.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 docs/status.txt
+adamcrump@Mac assignment2 % git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .idea/
+
+nothing added to commit but untracked files present (use "git add" to track)
+adamcrump@Mac assignment2 % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 14 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 348 bytes | 348.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:tab19e/assignment2.git
+   f4975e5..de7adfb  master -> master
+adamcrump@Mac assignment2 % git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 1.49 KiB | 305.00 KiB/s, done.
+From github.com:tab19e/assignment2
+   de7adfb..26819fd  master     -> origin/master
+Updating de7adfb..26819fd
+Fast-forward
+ docs/status.txt | 37 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 36 insertions(+), 1 deletion(-)
+adamcrump@Mac assignment2 % touch docs/answers.txt
+adamcrump@Mac assignment2 % git add docs/answers.txt
+adamcrump@Mac assignment2 % git commit -m "add file answers.txt to docs"
+[master 71728a2] add file answers.txt to docs
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 docs/answers.txt
+adamcrump@Mac assignment2 % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 14 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 332 bytes | 332.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:tab19e/assignment2.git
+   26819fd..71728a2  master -> master
+adamcrump@Mac assignment2 % 
+
+How many commits have been done to the repository (not only by you, but by anyone) so far? 
+Write the git command you used to get this information (4 points)
+
+adamcrump@Mac assignment2 % git rev-list --count HEAD
+9
+
+
+When was the README.md  file modified last? Write the git command you used to get this information (4 points)
+
+adamcrump@Mac assignment2 % git log -1 --format=%ci -- README.md
+2019-09-25 18:33:08 -0400
+
+
+Mention two reasons why branches are used in a Git repository (4 points)
+
+Enables development of new features without impacting the main codebase.
+Facilitates parallel development and easy merging of code
+
+What is the difference between git log and git status? (4 points)
+
+git log shows the commit history, while git status shows the current 
+state of the working directory and staging area.
+
+What command would you use to see the commits where “Vehicle.h” was one of the committed files? (4 points)
+
+git log Vehicle.h
+
+What command would you use to see the commits whose commit message contains the word “file”? (4 points)
+
+git log --oneline --grep="file"
+
+
+In the context of object-oriented programming (I) What is inheritance? (II) What is polymorphism? 
+(III) What is encapsulation? (6 points)
+
+Inheritance: Allows a class to inherit properties and behaviors from another class.
+Polymorphism: Enables different classes to be treated as instances of the same class through a common interface.
+Encapsulation: Restricts direct access to certain details of an object, promoting modular code.
+
+
+What is the main difference between the “Dictator and Lieutenants” workflow and the 
+“Integration manager” workflow? (5 points)
+
+• Dictator repository: Merges changes in the lieutenant
+repositories and solves any arising conflicts.
+• Lieutenant repositories: Merges changes for some
+(not all) developers and solves conflicts. A developer
+pushes changes to the assigned lieutenant repository.
+
+
+How would a team of 100 developers benefit from following the “Dictator and Lieutenants” 
+workflow instead of the “Centralized” workflow? (5 points)
+
+The "Dictator and Lieutenants" workflow allows a large team to scale efficiently by distributing responsibilities 
+among lieutenants, preventing bottlenecks. Each lieutenant can manage specific parts of the project, enabling faster 
+and more organized contributions compared to a centralized approach. This structure also improves 
+quality control through a multi-layered review, ensuring more reliable code integration into the main branch.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
