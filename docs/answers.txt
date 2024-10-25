@@ -1,3 +1,11 @@
+Gitlab tutorials went over on 10/24/25 @ 6 pm
+setup my gitlab account 10/18/25 as we need it for the app we are doing for our group project.
+
+
+
+
+
+
 PASTE THE CONSOLE OUTPUT YOU SAVED AT THE END OF STEP 3.C
 
 adamcrump@Mac assignment2 % git status
